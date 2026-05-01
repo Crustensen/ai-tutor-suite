@@ -2,7 +2,6 @@ import Link from "next/link";
 import { BarChart3, BrainCircuit, FileSpreadsheet } from "lucide-react";
 
 import { SiteNav } from "@/components/site-nav";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function LandingPage() {
@@ -22,13 +21,19 @@ export default function LandingPage() {
             actionable analytics.
           </p>
           <div className="flex justify-center gap-3">
-            <Button asChild className="bg-indigo-600 hover:bg-indigo-700">
-              <Link href="/dashboard">Open Dashboard</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href="/generator">Try AI Generator</Link>
-            </Button>
-          </div>
+  <Link 
+    href="/dashboard" 
+    className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-sm font-medium text-white shadow transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+  >
+    Open Dashboard
+  </Link>
+  <Link 
+    href="/generator" 
+    className="inline-flex items-center justify-center rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-900 shadow-sm transition-colors hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+  >
+    Try AI Generator
+  </Link>
+</div>
         </section>
 
         <section className="mt-12 grid gap-6 md:grid-cols-2">
@@ -66,12 +71,13 @@ export default function LandingPage() {
                 Start from test generation, then move to analytics with the same clean interface.
               </p>
             </div>
-            <Button asChild className="bg-indigo-600 hover:bg-indigo-700">
-              <Link href="/dashboard">
-                <FileSpreadsheet className="mr-2 h-4 w-4" />
-                Go to Analytics
-              </Link>
-            </Button>
+            <Link 
+  href="/dashboard" 
+  className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-sm font-medium text-white shadow transition-colors hover:bg-indigo-700"
+>
+  <FileSpreadsheet className="mr-2 h-4 w-4" />
+  Go to Analytics
+</Link>
           </div>
         </section>
       </main>
